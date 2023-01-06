@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  server.insecure: "true"
-  users.anonymous.enabled: 'true'
+  server.insecure: "false"
+  users.anonymous.enabled: "false"

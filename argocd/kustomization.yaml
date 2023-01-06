@@ -1,7 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: argocd
 
 resources:
+  - base/namespace.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.0-rc2/manifests/install.yaml
   - base/default-appprojects.yaml
   - base/bootstrap-application.yaml
@@ -11,4 +13,3 @@ patchesStrategicMerge:
   - overlays/argocd-cm.yaml
   - overlays/argocd-server-service.yaml
 
-namespace: argocd
