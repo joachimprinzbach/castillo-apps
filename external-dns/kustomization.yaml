@@ -5,6 +5,7 @@ namespace: external-dns
 resources:
   - https://github.com/kubernetes-sigs/external-dns/kustomize?ref=v0.13.1
   - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/v0.13.1/docs/contributing/crd-source/crd-manifest.yaml
+  - base/external-dns-namespace.yaml
 
 patchesStrategicMerge:
   - overlays/external-dns-deployment.yaml
