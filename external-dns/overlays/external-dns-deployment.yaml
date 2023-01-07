@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  template:
+    spec:
+      containers:
+        -
+          name: external-dns
+          image: k8s.gcr.io/external-dns/external-dns:v0.13.1
+          args:
+            - --source=crd
+            - --provider=cloudflare
+            - --txt-prefix=extdns.
+            - --interval=20s
+            - --events
+            - --default-targets=167.235.216.131
+            - --log-level=info
+          env:
+            - name: CF_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: api-key
+                  name: cloudflare-api-key
+            - name: CF_API_EMAIL
+              value: "joachim.prinzbach@gmail.com"
