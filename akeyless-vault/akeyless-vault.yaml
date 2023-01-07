@@ -11,12 +11,12 @@ spec:
           accessID:
             name: akeyless
             key: accessId
-            namespace: akeyless-vault
+            namespace: default
           accessType:
             name: akeyless
             key: accessType
-            namespace: akeyless-vault
+            namespace: default
           accessTypeParam:
             name: akeyless
             key: accessTypeParam
-            namespace: akeyless-vault
+            namespace: default
