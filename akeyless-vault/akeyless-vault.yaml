@@ -15,8 +15,8 @@ spec:
           accessType:
             name: akeyless-secret-creds
             key: accessType
-            namespace: akeyless
+            namespace: akeyless-vault
           accessTypeParam:
             name: akeyless-secret-creds
             key: accessTypeParam
-            namespace: akeyless
+            namespace: akeyless-vault
