@@ -7,6 +7,7 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.0-rc2/manifests/install.yaml
   - base/default-app-project.yaml
   - base/bootstrap-application-set.yaml
+  - base/argocd-dns-endpoint.yaml
 
 ## changes to config maps
 patchesStrategicMerge:
