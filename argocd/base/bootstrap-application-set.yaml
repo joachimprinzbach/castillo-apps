@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: castillo-apps
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/joachimprinzbach/castillo-apps.git
+        revision: HEAD
+        directories:
+          - path: *
+  template:
+    metadata:
+      name: '{{path[0]}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/joachimprinzbach/castillo-apps.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
