@@ -5,3 +5,14 @@ metadata:
 data:
   server.insecure: "false"
   users.anonymous.enabled: "false"
+  url: https://argocd.prinzba.ch
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: $github-argocd-oauth-client-id:client-id
+          clientSecret: $github-argocd-oauth-client-secret:client-secret
+          orgs:
+          - name: castillo-k8s
