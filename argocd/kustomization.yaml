@@ -8,6 +8,8 @@ resources:
   - base/default-app-project.yaml
   - base/bootstrap-application-set.yaml
   - base/argocd-dns-endpoint.yaml
+  - base/github-argocd-oauth-client-id-external-secret.yaml
+  - base/github-argocd-oauth-client-secret-external-secret.yaml
 
 ## changes to config maps
 patchesStrategicMerge:
