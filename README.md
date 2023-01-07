@@ -57,6 +57,20 @@ helm repo add external-secrets https://charts.external-secrets.io
 
 helm install external-secrets external-secrets/external-secrets -n external-secrets --create-namespace --set installCRDs=true
 
+kubect apply -f secret.yaml
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: akeyless-secret-creds
+  namespace: akeyless-vault
+type: Opaque
+stringData:
+  accessId: <the-access-id>
+  accessType:  api_key
+  accessTypeParam:  <the-api-key>
+```
+
 
 kubectl apply -k argo...
 
