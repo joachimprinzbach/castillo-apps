@@ -2,7 +2,6 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: cloudflare-lets-encrypt
-  namespace: cert-manager
 spec:
   acme:
     email: joachim.prinzbach@gmail.com
