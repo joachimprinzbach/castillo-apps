@@ -9,14 +9,14 @@ spec:
       authSecretRef:
         secretRef:
           accessID:
-            name: akeyless
+            name: akeyless-secret-creds
             key: accessId
-            namespace: default
+            namespace: akeyless-vault
           accessType:
-            name: akeyless
+            name: akeyless-secret-creds
             key: accessType
-            namespace: default
+            namespace: akeyless
           accessTypeParam:
-            name: akeyless
+            name: akeyless-secret-creds
             key: accessTypeParam
-            namespace: default
+            namespace: akeyless
