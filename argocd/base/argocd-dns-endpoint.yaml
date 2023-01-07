@@ -6,7 +6,7 @@ metadata:
 spec:
   endpoints:
     - dnsName: argocd.prinzba.ch
-      recordTTL: 180
+      recordTTL: 1
       recordType: A
       targets:
         - 192.168.1.201
