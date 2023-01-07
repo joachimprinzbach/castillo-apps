@@ -3,9 +3,9 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - base/namespace.yaml
+  - base/argocd-namespace.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.0-rc2/manifests/install.yaml
-  - base/default-appprojects.yaml
+  - base/default-app-project.yaml
   - base/bootstrap-application-set.yaml
 
 ## changes to config maps
