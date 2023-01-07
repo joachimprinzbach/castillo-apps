@@ -15,7 +15,6 @@ spec:
             - --txt-prefix=extdns.
             - --interval=20s
             - --events
-            - --default-targets=167.235.216.131
             - --log-level=info
           env:
             - name: CF_API_KEY
