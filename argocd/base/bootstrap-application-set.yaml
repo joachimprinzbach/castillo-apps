@@ -7,8 +7,9 @@ spec:
     - git:
         repoURL: https://github.com/joachimprinzbach/castillo-apps.git
         revision: HEAD
+        pathParamPrefix: ""
         directories:
-          - path: *
+          - path: "*"
   template:
     metadata:
       name: '{{path[0]}}'
