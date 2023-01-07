@@ -58,7 +58,7 @@ helm repo add external-secrets https://charts.external-secrets.io
 
 helm install external-secrets external-secrets/external-secrets -n external-secrets --create-namespace --set installCRDs=true
 
-
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
 
 
 kubectl apply -k argo...
