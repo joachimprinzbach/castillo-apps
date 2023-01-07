@@ -15,4 +15,5 @@ resources:
 ## changes to config maps
 patchesStrategicMerge:
   - overlays/argocd-cm.yaml
+  - overlays/argocd-server-service.yaml
 
