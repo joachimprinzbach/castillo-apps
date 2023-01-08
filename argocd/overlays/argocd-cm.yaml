@@ -10,6 +10,6 @@ data:
     name: Keycloak
     issuer: https://auth.prinzba.ch/realms/argocd
     clientID: argocd
-    clientSecret: $keycloak-oauth-client-secret:client-secret-base64
+    clientSecret: $keycloak-oauth-client-secret:client-secret
     requestedScopes: ["openid", "profile", "email", "groups"]
 
