@@ -11,6 +11,7 @@ spec:
   tls:
     - hosts:
         - auth.prinzba.ch
+      secretName: tls-secret
   rules:
     - host: auth.prinzba.ch
       http:
