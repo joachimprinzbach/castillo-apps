@@ -20,6 +20,7 @@ tyk-headless:
     # tyk.conf node_secret
     # tyk.conf secret
     APISecret: CHANGEME
+    OrgID: CHANGEME
     # If you don't want to store plaintext secrets in the Helm value file and would
     # rather provide the k8s Secret externally please populate the value below
     useSecretName: ""
@@ -34,9 +35,8 @@ tyk-headless:
     # the endpoints of the redis instances or use the cluster configuration endpoint.
     #
     # Default value: redis.{{ .Release.Namespace }}.svc.cluster.local:6379
-    # addrs:
-    #   Example using tyk simple redis chart
-    #   - redis.tyk.svc.cluster.local:6379
+    addrs:
+    - redis.tyk.svc.cluster.local:6379
     #   Example using bitnami/redis
     #   - tyk-redis-master.tyk.svc.cluster.local:6379
     #   Example using bitnami/redis with sentinel
