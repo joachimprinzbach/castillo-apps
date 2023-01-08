@@ -1,7 +1,0 @@
-apiVersion: v2
-name: tyk
-version: 0.1.0
-dependencies:
-  - name: tyk-headless
-    version: 0.13.2
-    repository: https://helm.tyk.io/public/helm/charts/
