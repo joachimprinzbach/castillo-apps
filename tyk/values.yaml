@@ -124,7 +124,7 @@ tyk-headless:
     # Creates an ingress object in k8s. Will require an ingress-controller and
     # annotation to that ingress controller.
     ingress:
-      enabled: true
+      enabled: false
       # specify your ingress controller class name below
       className: "public"
       annotations:
