@@ -12,8 +12,6 @@ resources:
   - base/github-argocd-oauth-client-secret-external-secret.yaml
   - base/argocd-ingress.yaml
 
-## changes to config maps
 patchesStrategicMerge:
   - overlays/argocd-cm.yaml
-  - overlays/argocd-server-service.yaml
 
