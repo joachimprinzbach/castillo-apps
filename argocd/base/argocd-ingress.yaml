@@ -13,6 +13,10 @@ metadata:
     #
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
+  tls:
+    - hosts:
+        - argocd.prinzba.ch
+      secretName: argocd-secret # do not change, this is provided by Argo CD
   rules:
     - host: argocd.prinzba.ch
       http:
@@ -24,7 +28,3 @@ spec:
                 name: argocd-server
                 port:
                   name: https
-  tls:
-    - hosts:
-        - argocd.prinzba.ch
-      secretName: argocd-secret # do not change, this is provided by Argo CD
