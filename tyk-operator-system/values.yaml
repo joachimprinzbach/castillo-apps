@@ -1,0 +1,32 @@
+#tyk-operator:
+#  replicaCount: 1
+#  # loads environment variables to the operator.
+#  envFrom:
+#    - secretRef:
+#        name: tyk-operator-conf
+#  envVars:
+#    - name: TYK_HTTPS_INGRESS_PORT
+#      value: "8443"
+#    - name: TYK_HTTP_INGRESS_PORT
+#      value: "8080"
+#  image:
+#    repository: tykio/tyk-operator
+#    pullPolicy: IfNotPresent
+#    tag: "v0.12.0"
+#  imagePullSecrets: [ ]
+#  nameOverride: ""
+#  fullnameOverride: ""
+#  annotations: { }
+#  podAnnotations: { }
+#  podSecurityContext:
+#    allowPrivilegeEscalation: false
+#  resources: { }
+#  nodeSelector: { }
+#  #specify necessary resources for kube-rbac-proxy container
+#  rbac:
+#    resources: { }
+#    # specify custom/internal repo name for kube-rbac-proxy container
+#    image:
+#      repository: gcr.io/kubebuilder/kube-rbac-proxy
+#      pullPolicy: IfNotPresent
+#      tag: "v0.8.0"
