@@ -101,7 +101,7 @@ tyk-headless:
     # The hostname to bind the Gateway to.
     hostName: tyk-gw.local
     # When true, sets the gateway protocol to HTTPS.
-    tls: false
+    tls: true
 
     kind: Deployment
     replicaCount: 1
@@ -126,10 +126,12 @@ tyk-headless:
     ingress:
       enabled: true
       # specify your ingress controller class name below
-      className: "nginx"
+      className: "public"
       annotations:
-        kubernetes.io/ingress.class: nginx
+        cert-manager.io/cluster-issuer: cloudflare-lets-encrypt
+        kubernetes.io/ingress.class: public
         kubernetes.io/tls-acme: "true"
+        nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       hosts:
         - host: tyk.prinzba.ch
           paths:
