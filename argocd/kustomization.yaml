@@ -10,7 +10,6 @@ resources:
   - base/argocd-dns-endpoint.yaml
   - base/github-argocd-oauth-client-id-external-secret.yaml
   - base/github-argocd-oauth-client-secret-external-secret.yaml
-  - base/keycloak-oauth-client-secret-external-secret.yaml
   - base/argocd-ingress.yaml
 
 ## changes to config maps
