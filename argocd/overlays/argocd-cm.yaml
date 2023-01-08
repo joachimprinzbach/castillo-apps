@@ -14,5 +14,6 @@ data:
         config:
           clientID: $github-argocd-oauth-client-id:client-id
           clientSecret: $github-argocd-oauth-client-secret:client-secret
+          redirectURI: https://argocd.prinzba.ch/dex/callback
           orgs:
           - name: castillo-k8s
