@@ -17,4 +17,5 @@ resources:
 patchesStrategicMerge:
   - overlays/argocd-cm.yaml
   - overlays/argocd-server-service.yaml
+  - overlays/argocd-rbac-cm.yaml
 
