@@ -9,6 +9,8 @@ resources:
   - base/bootstrap-application-set.yaml
   - base/github-argocd-oauth-client-id-external-secret.yaml
   - base/github-argocd-oauth-client-secret-external-secret.yaml
+  - base/google-argocd-oauth-client-id-external-secret.yaml
+  - base/google-argocd-oauth-client-secret-external-secret.yaml
   - base/argocd-ingress.yaml
 
 ## changes to config maps
