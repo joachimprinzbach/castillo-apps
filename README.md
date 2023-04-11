@@ -20,7 +20,7 @@ sudo chown -f -R joachim ~/.kube
 
 ### reload user groups
 ```shell
-newgrp microks
+newgrp microk8s
 ```
 
 ```shell
@@ -74,10 +74,10 @@ kind: Secret
 metadata:
   name: akeyless-secret-creds
   namespace: akeyless-vault
-type: Opaque
+type: Opaque[config](..%2F..%2F.kube%2Fconfig)
 stringData:
   accessId: <the-access-id>
-  accessType:  api_key
+  accessType:  api_key[config - Kopie](..%2F..%2F.kube%2Fconfig%20-%20Kopie)
   accessTypeParam:  <the-api-key>
 ```
 
