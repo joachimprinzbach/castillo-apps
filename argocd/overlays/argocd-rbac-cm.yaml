@@ -15,4 +15,4 @@ data:
     p, role:org-admin, logs, get, *, allow
     p, role:org-admin, exec, create, */*, allow
 
-    g, castillo-k8s:Admins, role:org-admin
+    g, castillo-k8s:admins, role:org-admin
