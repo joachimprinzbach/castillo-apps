@@ -10,8 +10,6 @@ spec:
           name: external-dns
           image: k8s.gcr.io/external-dns/external-dns:v0.13.4
           args:
-            - --source=ingress
-            - --source=service
             - --source=crd
             - --crd-source-kind=DNSEndpoint
             - --provider=cloudflare
