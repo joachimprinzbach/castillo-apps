@@ -8,11 +8,14 @@ data:
   url: https://argocd.prinzba.ch
   dex.config: |
     connectors:
-      - type: oidc
-        id: google
-        name: Google
+      - type: github
+        id: github
+        name: GitHub
         config:
-          issuer: https://accounts.google.com
-          clientID: $google-argocd-oauth-client-id:client-id
-          clientSecret: $google-argocd-oauth-client-secret:client-secret
+          clientID: $github-argocd-oauth-client-id:client-id
+          clientSecret: $github-argocd-oauth-client-secret:client-secret
+          orgs:
+          - name: castillo-k8s
+            teams:
+            - Admins
 
