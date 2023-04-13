@@ -14,5 +14,3 @@ data:
         config:
           clientID: $github-argocd-oauth-client-id:client-id
           clientSecret: $github-argocd-oauth-client-secret:client-secret
-          orgs:
-          - name: castillo-k8s
