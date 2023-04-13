@@ -14,7 +14,7 @@ spec:
             - --source=service
             - --source=crd
             - --crd-source-kind=DNSEndpoint
-            - --provider=Cloudflare
+            - --provider=cloudflare
             - --domain-filter=prinzba.ch
             - --txt-prefix=extdns.
             - --interval=20s
