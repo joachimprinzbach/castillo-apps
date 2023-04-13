@@ -13,9 +13,9 @@ spec:
             - --source=crd
             - --crd-source-kind=DNSEndpoint
             - --provider=cloudflare
-            - --domain-filter=prinzba.ch
             - --txt-prefix=extdns.
             - --interval=20s
+            - --cloudflare-dns-records-per-page=5000
             - --events
             - --log-level=info
           env:
