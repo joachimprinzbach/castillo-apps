@@ -12,6 +12,7 @@ resources:
   - base/google-argocd-oauth-client-id-external-secret.yaml
   - base/google-argocd-oauth-client-secret-external-secret.yaml
   - base/argocd-ingress.yaml
+  - base/argocd-dns-endpoint.yaml
 
 ## changes to config maps
 patchesStrategicMerge:
