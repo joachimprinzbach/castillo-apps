@@ -21,6 +21,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: release-name-home-assistant
+                name: homeassistant
                 port:
                   name: http
