@@ -2,9 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx
+  namespace: dns-test
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-lets-encrypt
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: public
     kubernetes.io/tls-acme: "true"
 spec:
   tls:
@@ -30,6 +31,7 @@ kind: Service
 metadata:
   labels:
     app: nginx
+  namespace: dns-test
   name: nginx
 spec:
   ports:
@@ -44,6 +46,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  namespace: dns-test
 spec:
   selector:
     matchLabels:
