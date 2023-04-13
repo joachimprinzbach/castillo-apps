@@ -11,7 +11,11 @@ spec:
           image: k8s.gcr.io/external-dns/external-dns:v0.13.4
           args:
             - --source=ingress
-            - --provider=cloudflare
+            - --source=service
+            - --source=crd
+            - --crd-source-kind=DNSEndpoint
+            - --provider=Cloudflare
+            - --domain-filter=prinzba.ch
             - --txt-prefix=extdns.
             - --interval=20s
             - --events
