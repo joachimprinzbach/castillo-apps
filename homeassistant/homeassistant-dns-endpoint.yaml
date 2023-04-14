@@ -1,0 +1,12 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: argocd-dns
+  namespace: argocd
+spec:
+  endpoints:
+    - dnsName: "ha.prinzba.ch"
+      recordTTL: 180
+      recordType: CNAME
+      targets:
+        - "prinzba.ch"
