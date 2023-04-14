@@ -1,8 +1,8 @@
 apiVersion: externaldns.k8s.io/v1alpha1
 kind: DNSEndpoint
 metadata:
-  name: argocd-dns
-  namespace: argocd
+  name: ha-dns
+  namespace: ha
 spec:
   endpoints:
     - dnsName: "ha.prinzba.ch"

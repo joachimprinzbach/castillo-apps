@@ -16,7 +16,7 @@ spec:
         app: homeassistant
     spec:
       containers:
-        - name: home-assistant
+        - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
           livenessProbe:
             tcpSocket:
