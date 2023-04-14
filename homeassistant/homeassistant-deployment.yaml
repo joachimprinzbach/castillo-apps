@@ -15,9 +15,16 @@ spec:
       labels:
         app: homeassistant
     spec:
+      volumes:
+        - name: pvc
+          persistentVolumeClaim:
+            claimName: homeassistant-pvc
       containers:
         - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
+          volumeMounts:
+            - name: pvc
+              mountPath: /config
           livenessProbe:
             tcpSocket:
               port: 8123
