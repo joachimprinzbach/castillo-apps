@@ -23,7 +23,7 @@ spec:
             claimName: homeassistant-pvc
         - name: homeassistant-config
           configMap:
-            name: homeassist-config
+            name: homeassistant-config
             defaultMode: 0777
       containers:
         - name: homeassistant
