@@ -7,7 +7,6 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-lets-encrypt
     kubernetes.io/ingress.class: public
     kubernetes.io/tls-acme: "true"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   tls:
     - hosts:
