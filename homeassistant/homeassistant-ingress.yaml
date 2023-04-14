@@ -22,4 +22,4 @@ spec:
               service:
                 name: homeassistant
                 port:
-                  name: https
+                  name: http
