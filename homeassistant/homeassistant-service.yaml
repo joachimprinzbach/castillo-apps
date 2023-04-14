@@ -8,11 +8,7 @@ spec:
   selector:
     app: homeassistant
   ports:
-    - name: http
+    - port: 8123
+      targetPort: http
       protocol: TCP
-      port: 80
-      targetPort: 8123
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 8123
+      name: http
