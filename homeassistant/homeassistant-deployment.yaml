@@ -18,15 +18,22 @@ spec:
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
       volumes:
-        - name: config
+        - name: homeassistant-pv
           persistentVolumeClaim:
             claimName: homeassistant-pvc
+        - name: homeassistant-config
+          configMap:
+            name: homeassist-config
+            defaultMode: 0777
       containers:
         - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
           volumeMounts:
-            - name: config
-              mountPath: /config
+            - mountPath: /config
+              name: homeassistant-pv
+            - mountPath: /config/configuration.yaml"
+              subPath: "configuration.yaml"
+              name: homeassistant-config
           ports:
             - name: http
               containerPort: 8123
