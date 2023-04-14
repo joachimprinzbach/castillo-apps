@@ -9,6 +9,12 @@ data:
   configuration.yaml: |
     # Loads default set of integrations. Do not remove.
     default_config:
+    http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 172.30.33.3
+        - 127.0.0.1
+        - ::1
 
     # Load frontend themes from the themes folder
     frontend:
