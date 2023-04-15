@@ -11,7 +11,7 @@ data:
           
     http:
       use_x_forwarded_for: true
-      trused_proxies:
+      trusted_proxies:
         - 172.30.33.3
         - 127.0.0.1
         - ::1
