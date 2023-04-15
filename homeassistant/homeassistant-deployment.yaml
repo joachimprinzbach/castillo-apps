@@ -26,9 +26,6 @@ spec:
         - name: homeassistant-config
           configMap:
             name: homeassistant-config
-            items:
-              - key: configuration.yaml
-                path: configuration.yaml
       containers:
         - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
