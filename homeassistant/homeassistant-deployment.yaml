@@ -25,9 +25,6 @@ spec:
             claimName: homeassistant-pvc
         - name: homeassistant-config
           configMap:
-            items:
-              - key: configuration.yaml
-                path: configuration.yaml
             name: homeassistant-config
             defaultMode: 0777
       containers:
@@ -41,5 +38,5 @@ spec:
             - name: homeassistant-pv
               mountPath: /config
             - name: homeassistant-config
-              mountPath: /config/configuration.yaml
-              subPath: configuration.yaml
+              mountPath: /config/configurationx.yaml
+              subPath: configurationx.yaml

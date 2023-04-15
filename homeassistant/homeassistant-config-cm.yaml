@@ -6,7 +6,7 @@ metadata:
   name: homeassistant-config
   namespace: homeassistant
 data:
-  configuration.yaml: |
+  configurationx.yaml: |
     # Loads default set of integrations. Do not remove.
     default_config:
     http:
