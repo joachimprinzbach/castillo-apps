@@ -38,5 +38,5 @@ spec:
             - name: homeassistant-pv
               mountPath: /config
             - name: homeassistant-config
-              mountPath: /config/configuration.yaml
+              mountPath: /config/configuration2.yaml
               subPath: configuration2.yaml
