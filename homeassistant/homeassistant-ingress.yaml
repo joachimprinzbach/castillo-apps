@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: homeassistant
+                name: homeassistant-service
                 port:
                   name: http

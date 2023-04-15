@@ -3,9 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     reloader.stakater.com/search: "true"
-  labels:
-    app: homeassistant
-  name: homeassistant
+  name: homeassistant-deployment
   namespace: homeassistant
 spec:
   replicas: 1
@@ -32,13 +30,13 @@ spec:
       containers:
         - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
-          volumeMounts:
-            - mountPath: /config
-              name: homeassistant-pv
-            - mountPath: /config/configuration.yaml
-              subPath: configuration.yaml
-              name: homeassistant-config
           ports:
             - name: http
               containerPort: 8123
               protocol: TCP
+          volumeMounts:
+            - name: homeassistant-pv
+              mountPath: /config
+            - name: homeassistant-config
+              mountPath: /config/configuration.yaml
+              subPath: configuration2.yaml
