@@ -40,3 +40,13 @@ spec:
               mountPath: /config/configuration.yaml
               subPath: configuration.yaml
               readOnly: true
+      initContainers:
+        - name: init-homeassistant
+          image: busybox
+          command: [ '/bin/sh', '-c' ]
+          args: [ 'cp /config/configuration.yaml /config-ha/configuration.yaml; cp /config/automations.yaml /config-ha/automations.yaml; cp /config/scripts.yaml /config-ha/scripts.yaml; cp /config/scenes.yaml /config-ha/scenes.yaml' ]
+          volumeMounts:
+            - name: homeassistant-config
+              mountPath: /config
+            - name: homeassistant-pv
+              mountPath: /config-ha

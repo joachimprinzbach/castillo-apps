@@ -12,3 +12,13 @@ data:
       use_x_forwarded_for: true
     tts:
       - platform: google_translate
+
+    automation: !include automations.yaml
+    script: !include scripts.yaml
+    scene: !include scenes.yaml
+
+  automations.yaml: |
+
+  scripts.yaml: |
+
+  scenes.yaml: |
