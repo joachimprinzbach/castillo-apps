@@ -26,7 +26,9 @@ spec:
         - name: homeassistant-config
           configMap:
             name: homeassistant-config
-            defaultMode: 0777
+            items:
+              - key: configuration.yaml
+                path: configuration.yaml
       containers:
         - name: homeassistant
           image: "homeassistant/home-assistant:2023.4"
@@ -38,5 +40,6 @@ spec:
             - name: homeassistant-pv
               mountPath: /config
             - name: homeassistant-config
-              mountPath: /config/configurationx.yaml
-              subPath: configurationx.yaml
+              mountPath: /config/configuration.yaml
+              subPath: configuration.yaml
+              readOnly: true
