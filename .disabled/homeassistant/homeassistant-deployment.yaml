@@ -1,36 +1,52 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homeassist-deployment
+  annotations:
+    reloader.stakater.com/search: "true"
+  name: homeassistant-deployment
   namespace: homeassistant
-  labels:
-    app: homeassist
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
-      app: homeassist
+      app: homeassistant
   template:
     metadata:
       labels:
-        app: homeassist
+        app: homeassistant
     spec:
-      containers:
-        - name: homeassist
-          image: homeassistant/home-assistant
-          ports:
-            - containerPort: 8123
-          volumeMounts:
-            - mountPath: "/config"
-              name: homeassist-persistent-storage
-            - mountPath: "/config/configuration.yaml"
-              subPath: "configuration.yaml"
-              name: homeassist-config
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       volumes:
-        - name: homeassist-config
-          secret:
-            secretName: homeassist-config
-            defaultMode: 0777
-        - name: homeassist-persistent-storage
+        - name: homeassistant-pv
           persistentVolumeClaim:
-            claimName: homeassist-pv-claim
+            claimName: homeassistant-pvc
+        - name: homeassistant-config
+          configMap:
+            name: homeassistant-config
+      containers:
+        - name: homeassistant
+          image: "homeassistant/home-assistant:2023.4"
+          ports:
+            - name: http
+              containerPort: 8123
+              protocol: TCP
+          volumeMounts:
+            - name: homeassistant-pv
+              mountPath: /config
+            - name: homeassistant-config
+              mountPath: /config/configuration.yaml
+              subPath: configuration.yaml
+              readOnly: true
+      initContainers:
+        - name: init-homeassistant
+          image: busybox
+          command: [ '/bin/sh', '-c' ]
+          args: [ 'cp /config/configuration.yaml /config-ha/configuration.yaml; cp /config/automations.yaml /config-ha/automations.yaml; cp /config/scripts.yaml /config-ha/scripts.yaml; cp /config/scenes.yaml /config-ha/scenes.yaml' ]
+          volumeMounts:
+            - name: homeassistant-config
+              mountPath: /config
+            - name: homeassistant-pv
+              mountPath: /config-ha

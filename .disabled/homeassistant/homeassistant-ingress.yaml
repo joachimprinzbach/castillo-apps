@@ -1,23 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: homeassist-ingress
+  name: homeassistant-ingress
   namespace: homeassistant
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: cloudflare-lets-encrypt
+    kubernetes.io/ingress.class: public
+    kubernetes.io/tls-acme: "true"
 spec:
   tls:
     - hosts:
-        - homeassist.local
-      secretName: star-app-tls
+        - ha.prinzba.ch
+      secretName: ha-cert
   rules:
-    - host: homeassist.local
+    - host: ha.prinzba.ch
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: homeassist
+                name: homeassistant-service
                 port:
-                  number: 443
+                  name: http
