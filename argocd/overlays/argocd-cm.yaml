@@ -5,7 +5,7 @@ metadata:
 data:
   server.insecure: "false"
   users.anonymous.enabled: "false"
-  admin.enabled: "false"
+  admin.enabled: "true"
   url: https://argocd.prinzba.ch
   dex.config: |
     connectors:
