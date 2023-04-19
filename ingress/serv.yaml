@@ -21,8 +21,7 @@ subsets:
 
 
 ---
-
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: external-ingress
@@ -31,6 +30,10 @@ spec:
     - host: ha.prinzba.ch
       http:
         paths:
-          - backend:
-              serviceName: external-service
-              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: external-service
+                port:
+                  number: 80
