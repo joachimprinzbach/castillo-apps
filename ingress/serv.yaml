@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+
+---
+
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: external-service
+subsets:
+  - addresses:
+      - ip: 192.168.1.2
+    ports:
+      - port: 8123
+
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: external-ingress
+spec:
+  rules:
+    - host: ha.prinzba.ch
+      http:
+        paths:
+          - backend:
+              serviceName: external-service
+              servicePort: 80
