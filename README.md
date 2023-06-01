@@ -74,10 +74,10 @@ kind: Secret
 metadata:
   name: akeyless-secret-creds
   namespace: akeyless-vault
-type: Opaque[config](..%2F..%2F.kube%2Fconfig)
+type: Opaque
 stringData:
   accessId: <the-access-id>
-  accessType:  api_key[config - Kopie](..%2F..%2F.kube%2Fconfig%20-%20Kopie)
+  accessType:  api_key
   accessTypeParam:  <the-api-key>
 ```
 
