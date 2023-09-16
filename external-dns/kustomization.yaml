@@ -5,7 +5,6 @@ namespace: external-dns
 resources:
   - base/cf-api-key-external-secret.yaml
   - base/cf-api-token-external-secret.yaml
-  - base/external-dns-namespace.yaml
   - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/v0.13.5/docs/contributing/crd-source/crd-manifest.yaml
   - https://github.com/kubernetes-sigs/external-dns/kustomize?ref=v0.13.5
 
