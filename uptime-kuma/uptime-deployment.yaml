@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uptime
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uptime
+  template:
+    metadata:
+      labels:
+        app: uptime
+    spec:
+      volumes:
+        - name: uptime
+          persistentVolumeClaim:
+            claimName: uptime
+      containers:
+        - name: uptime
+          image: louislam/uptime-kuma
+          tag: 1.23.1-alpine
+          ports:
+            - containerPort: 3001
+          volumeMounts:
+            - mountPath: "/app/data"
+              name: uptime
