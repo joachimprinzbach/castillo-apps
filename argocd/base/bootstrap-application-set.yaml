@@ -12,7 +12,7 @@ spec:
           - path: "*"
   template:
     metadata:
-      name: '{{path[0]}}'
+      name: '{{path.basenameNormalized}}'
     spec:
       project: default
       source:
@@ -26,3 +26,5 @@ spec:
         automated:
           prune: true
           selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
