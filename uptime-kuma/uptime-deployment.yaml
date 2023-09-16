@@ -18,8 +18,7 @@ spec:
             claimName: uptime
       containers:
         - name: uptime
-          image: louislam/uptime-kuma
-          tag: 1.23.1-alpine
+          image: louislam/uptime-kuma:1.23.1-alpine
           ports:
             - containerPort: 3001
           volumeMounts:
