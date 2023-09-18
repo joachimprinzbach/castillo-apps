@@ -50,4 +50,6 @@ data:
   { { - end } }
   { { - if .Values.api.argocd.urls } }
   ARGOCD_NAMESPACE: { { .Values.controller.argocd.namespace } }
+  ARGOCD_URLS: { { range $key, $val := .Values.api.argocd.urls } }{ { $key } }={{ $val }},{{- end }}
+  {{- end }}
   { { - end } }
