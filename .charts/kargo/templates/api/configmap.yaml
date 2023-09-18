@@ -50,5 +50,4 @@ data:
   { { - end } }
   { { - if .Values.api.argocd.urls } }
   ARGOCD_NAMESPACE: { { .Values.controller.argocd.namespace } }
-  {{- end }}
   { { - end } }
