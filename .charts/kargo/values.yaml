@@ -33,7 +33,7 @@ rbac:
 ## When omitted, the controller will fall back on in-cluster configuration.
 ## In the average case, these settings should be left alone.
 kubeconfigSecrets: { }
-# kargo:
+  # kargo:
 # argocd:
 
 ## All settings for the api component.
@@ -55,7 +55,7 @@ api:
   ##
   ## Note: The protocol (http vs https) should not be specified and is
   ## automatically inferred by from other configuration options.
-  host: kargo.prinzba.ch
+  host: localhost
 
   logLevel: INFO
 
@@ -73,7 +73,7 @@ api:
     ##
     ## If false, a cert secret named
     ## kargo-api-cert MUST be provided in the same namespace as Kargo.
-    selfSignedCert: false
+    selfSignedCert: true
 
   ingress:
     ## Whether to enable ingress. By default, this is disabled. Enabling ingress
@@ -130,7 +130,7 @@ api:
     passwordHash:
 
     ## A password for the admin account. Ignored if passwordHash is set.
-    ## It is suggested that you generate this using a password manager or a
+    ## It is suggested that you generate this using a password manager or a 
     # command like
     ## `openssl rand -base64 29 | tr -d "=+/" | cut -c1-25`
     password: <admin password>
@@ -152,7 +152,7 @@ api:
     ## All other settings in this section will be ignored when this is set to
     ## false.
     enabled: false
-
+    
     ## The issuer URL for the identity provider.
     ##
     ## If Dex is enabled, this value will be ignored and the issuer URL will be
@@ -163,7 +163,7 @@ api:
     issuerURL: <issuer URL>
 
     ## The client ID for the OIDC client.
-    ##
+    ## 
     ## If Dex is enabled, this value will be ignored and the client ID will be
     ## automatically configured.
     ##
@@ -172,7 +172,7 @@ api:
     clientID: <client ID>
 
     ## The client ID for the OIDC client used by CLI (optional).
-    ##
+    ## 
     ## Needed by some OIDC providers (such as Dex) that require a separate
     ## Client ID for web app login vs. CLI login (http://localhost).
     ##
@@ -234,7 +234,7 @@ api:
       ## GitHub Example
       # - id: github
       #   name: GitHub
-      #   type: github
+      #   type: github  
       #   config:
       #     clientID: <your client ID>
       #     clientSecret: <your client secret>
@@ -250,7 +250,7 @@ api:
         #   cpu: 100m
         #   memory: 128Mi
         # requests:
-      #   cpu: 100m
+        #   cpu: 100m
       #   memory: 128Mi
 
       nodeSelector: { }
@@ -262,7 +262,7 @@ api:
     ## Argo CD URLs. If sharding is not used, map the empty string to the
     ## single Argo CD URL.
     urls:
-      - https://argocd.prinzba.ch
+    # "": https://argocd.example.com
     # "shard2": https://argocd2.example.com
 
   resources: { }
@@ -274,7 +274,7 @@ api:
     # limits:
     #   cpu: 100m
     #   memory: 128Mi
-  # requests:
+    # requests:
   #   cpu: 100m
   #   memory: 128Mi
 
@@ -328,7 +328,7 @@ controller:
     #   cpu: 100m
     #   memory: 128Mi
     # requests:
-  #   cpu: 100m
+    #   cpu: 100m
   #   memory: 128Mi
 
   nodeSelector: { }
@@ -377,7 +377,7 @@ webhooksServer:
     #   cpu: 100m
     #   memory: 128Mi
     # requests:
-  #   cpu: 100m
+    #   cpu: 100m
   #   memory: 128Mi
 
   nodeSelector: { }
@@ -411,7 +411,7 @@ garbageCollector:
     #   cpu: 100m
     #   memory: 128Mi
     # requests:
-  #   cpu: 100m
+    #   cpu: 100m
   #   memory: 128Mi
 
   nodeSelector: { }

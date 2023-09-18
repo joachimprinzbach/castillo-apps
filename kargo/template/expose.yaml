@@ -11,7 +11,7 @@ spec:
   tls:
     - hosts:
         - kargo.prinzba.ch
-      secretName: kargo-cert
+      secretName: kargo-api-cert
   rules:
     - host: kargo.prinzba.ch
       http:
@@ -20,7 +20,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: kargo
+                name: kargo-api
                 port:
                   number: 80
 
