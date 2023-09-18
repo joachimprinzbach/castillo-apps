@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kargo
+  namespace: kargo
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-lets-encrypt
+    kubernetes.io/ingress.class: public
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+    - hosts:
+        - kargo.prinzba.ch
+      secretName: kargo-cert
+  rules:
+    - host: kargo.prinzba.ch
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kargo
+                port:
+                  number: 80
+
+---
+
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: "kargo.prinzba.ch"
+  namespace: kargo
+spec:
+  endpoints:
+    - dnsName: "kargo.prinzba.ch"
+      recordTTL: 180
+      recordType: CNAME
+      targets:
+        - "prinzba.ch"
