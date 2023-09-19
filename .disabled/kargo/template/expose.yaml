@@ -22,7 +22,7 @@ spec:
               service:
                 name: kargo-api
                 port:
-                  number: 80
+                  number: 8080
 
 ---
 
