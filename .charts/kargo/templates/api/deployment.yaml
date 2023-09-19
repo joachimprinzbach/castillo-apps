@@ -59,13 +59,14 @@ readinessProbe:
 - -tls-no-verify
   { { - end } }
 initialDelaySeconds: 5
-  { { - if or .Values.kubeconfigSecrets.kargo (and .Values.api.oidc.enabled .Values.api.oidc.dex.enabled) } }
+  { { - if or .Values.kubeconfigSecrets.kargo (and .Values.api.oidc.enabled .Values.api.oidc.dex.enabled) .Values.api.tls.enabled } }
 volumeMounts:
   - mountPath: /etc/kargo
     name: config
     readOnly: true
   { { - end } }
-resources: { { toYaml .Values.api.resources } }
+resources:
+  { { - toYaml .Values.api.resources | nindent 12 } }
   { { - if or .Values.kubeconfigSecrets.kargo (and .Values.api.oidc.enabled .Values.api.oidc.dex.enabled) .Values.api.tls.enabled } }
 volumes:
   - name: config
