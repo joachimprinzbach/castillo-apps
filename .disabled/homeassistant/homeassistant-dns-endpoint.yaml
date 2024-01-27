@@ -5,8 +5,8 @@ metadata:
   namespace: homeassistant
 spec:
   endpoints:
-    - dnsName: "ha.prinzba.ch"
+    - dnsName: "ha.joachimprinzbach.com"
       recordTTL: 180
       recordType: CNAME
       targets:
-        - "prinzba.ch"
+        - "joachimprinzbach.com"

@@ -6,7 +6,7 @@ data:
   server.insecure: "false"
   users.anonymous.enabled: "false"
   admin.enabled: "false"
-  url: https://argocd.prinzba.ch
+  url: https://argocd.joachimprinzbach.com
   dex.config: |
     connectors:
       - type: github

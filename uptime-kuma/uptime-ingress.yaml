@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - uptime.prinzba.ch
+        - uptime.joachimprinzbach.com
       secretName: uptime-cert
   rules:
-    - host: uptime.prinzba.ch
+    - host: uptime.joachimprinzbach.com
       http:
         paths:
           - path: /

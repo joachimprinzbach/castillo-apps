@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - nginx.prinzba.ch
+        - nginx.joachimprinzbach.com
       secretName: nginx-cert
   rules:
-    - host: nginx.prinzba.ch
+    - host: nginx.joachimprinzbach.com
       http:
         paths:
           - path: /
@@ -67,12 +67,12 @@ spec:
 apiVersion: externaldns.k8s.io/v1alpha1
 kind: DNSEndpoint
 metadata:
-  name: "nginx.prinzba.ch"
+  name: "nginx.joachimprinzbach.com"
   namespace: dns-test
 spec:
   endpoints:
-    - dnsName: "nginx.prinzba.ch"
+    - dnsName: "nginx.joachimprinzbach.com"
       recordTTL: 180
       recordType: CNAME
       targets:
-        - "prinzba.ch"
+        - "joachimprinzbach.com"

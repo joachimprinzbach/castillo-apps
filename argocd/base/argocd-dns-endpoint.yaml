@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   endpoints:
-    - dnsName: "argocd.prinzba.ch"
+    - dnsName: "argocd.joachimprinzbach.com"
       recordTTL: 180
       recordType: CNAME
       targets:
-        - "prinzba.ch"
+        - "joachimprinzbach.com"

@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - ha.prinzba.ch
+        - ha.joachimprinzbach.com
       secretName: ha-cert
   rules:
-    - host: ha.prinzba.ch
+    - host: ha.joachimprinzbach.com
       http:
         paths:
           - path: /

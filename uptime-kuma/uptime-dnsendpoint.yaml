@@ -4,8 +4,8 @@ metadata:
   name: uptime-dns
 spec:
   endpoints:
-    - dnsName: "uptime.prinzba.ch"
+    - dnsName: "uptime.joachimprinzbach.com"
       recordTTL: 180
       recordType: CNAME
       targets:
-        - "prinzba.ch"
+        - "joachimprinzbach.com"
