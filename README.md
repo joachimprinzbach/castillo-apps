@@ -6,7 +6,7 @@ sudo snap install kubectl --classic
 
 sudo snap install helm --classic
 
-sudo snap install microk8s --classic --channel=1.26
+sudo snap install microk8s --classic --channel=1.29
 ```
 
 ### add user to group microk8s

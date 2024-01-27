@@ -15,10 +15,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - argocd.joachimprinzbach.com
+        - argocd.apps.joachimprinzbach.com
       secretName: argocd-secret # do not change, this is provided by Argo CD
   rules:
-    - host: argocd.joachimprinzbach.com
+    - host: argocd.apps.joachimprinzbach.com
       http:
         paths:
           - path: /
