@@ -82,6 +82,7 @@ stringData:
 ```
 
 ```shell
+kubectl create ns external-dns
 kubectl apply -k external-dns
 
 kubectl apply -k argocd
