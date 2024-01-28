@@ -15,6 +15,7 @@ spec:
             - --provider=cloudflare
             - --txt-prefix=extdns.
             - --interval=20s
+            - --cloudflare-proxied
             - --cloudflare-dns-records-per-page=5000
             - --events
             - --log-level=info
